@@ -1,0 +1,35 @@
+{% extends 'todoapp/dashboard.html' %}
+{% block title %}
+Tareas | Cleapp
+{% endblock title %}
+{% block content %}
+<div class="card">
+  <div class="card-header">
+      <strong>Tareas</strong> 
+  </div>
+  <div class="card-body card-block">
+      <div class="form-horizontal">
+          <div class="row form-group">
+              <div class="col col-md-3"><label for="text-input" class=" form-control-label">Título de la Tarea</label></div>
+              <div class="col-12 col-md-9">{{tarea.titulo}}</div>
+          </div>
+          <div class="row form-group">
+              <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Descripción</label></div>
+              <div class="col-12 col-md-9">{{tarea.descripcion}}</div>
+          </div>
+          <div class="row form-group">
+            <div class="col col-md-3"><label for="text-input" class=" form-control-label">Fecha de Inicio</label></div>
+            <div class="col-12 col-md-9">{{tarea.fecha_inicio}}</div>
+          </div>
+          <div class="row form-group">
+            <div class="col col-md-3"><label for="text-input" class=" form-control-label">Proyecto</label></div>
+            <div class="col-12 col-md-9">{{tarea.proyecto}}</div>
+          </div>
+          <div class="row form-group">
+            <div class="col col-md-3"><label for="text-input" class=" form-control-label">¿Completada?</label></div>
+            <div class="col-12 col-md-9">{{tarea.esta_completada}}</div>
+          </div>
+      </div>
+  </div>
+</div>
+{% endblock content %}

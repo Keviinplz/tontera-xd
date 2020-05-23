@@ -1,0 +1,42 @@
+{% extends 'todoapp/dashboard.html' %}
+{% block title %}
+Tareas | Cleapp
+{% endblock title %}
+{% block content %}
+<div class="card">
+  <div class="card-header">
+      <strong>Tareas</strong> 
+  </div>
+  <div class="card-body card-block">
+      <form action="#" method="post" enctype="multipart/form-data" class="form-horizontal">
+        {% csrf_token %}
+          <div class="row form-group">
+              <div class="col col-md-3"><label for="text-input" class=" form-control-label">Título de la Tarea</label></div>
+              <div class="col-12 col-md-9">{{form.titulo  }}<small class="form-text text-muted">Título General de su Tarea</small></div>
+          </div>
+          <div class="row form-group">
+              <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Descripción</label></div>
+              <div class="col-12 col-md-9">{{form.descripcion}}</textarea></div>
+          </div>
+          <div class="row form-group">
+            <div class="col col-md-3"><label for="text-input" class=" form-control-label">Fecha de Inicio</label></div>
+            <div class="col-12 col-md-9">{{form.fecha_inicio}}</div>
+          </div>
+          <div class="row form-group">
+            <div class="col col-md-3"><label for="text-input" class=" form-control-label">Proyecto</label></div>
+            <div class="col-12 col-md-9">{{form.proyecto}}</div>
+          </div>
+          <div class="row form-group">
+            <div class="col col-md-3"><label for="text-input" class=" form-control-label">¿Completada?</label></div>
+            <div class="col-12 col-md-9">{{form.esta_completada}}</div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-sm">
+            <i class="fa fa-dot-circle-o"></i> Crear Tarea
+          </button>
+          <button type="reset" class="btn btn-danger btn-sm">
+            <i class="fa fa-ban"></i> Limpiar
+          </button>
+      </form>
+  </div>
+</div>
+{% endblock content %}

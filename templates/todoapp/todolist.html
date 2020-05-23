@@ -1,0 +1,51 @@
+{% extends 'todoapp/dashboard.html' %}
+{% block title %}
+{{proyecto.nombre}} | Cleapp
+{% endblock title %}
+{% block content %}
+  <!-- To Do and Live Chat -->
+<div class="row">
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-body">
+                <div class="card-content">
+                    <div class="todo-list">
+                        <div class="tdl-holder">
+                            <div class="tdl-content">
+                                <ul>
+                                  {% for tarea in tareas %}
+                                    <li>
+                                        <label>
+                                            <input type="checkbox"><span>{{tarea.titulo}} {%if tarea.esta_completada%}<i class="ti-check"></i>{% endif %}</span>
+                                            <a href="{% url 'todoapp:eliminar_tarea' tarea.id %}" class="fa fa-times"></a>
+                                            <a href="{% url 'todoapp:editar_tarea' tarea.id %}" class="fa fa-pencil"></a>
+                                            <a href="{% url 'todoapp:ver_tarea' tarea.id %}"><i class="ti-eye"></i></a>
+                                        </label>
+                                    </li>
+                                  {% endfor %}
+                                  <a href="{% url 'todoapp:crear_tarea' %}" class="btn btn-success">Crear Tarea</a>
+                                </ul>
+                            </div>
+                        </div>
+                    </div> <!-- /.todo-list -->
+                </div>
+            </div> <!-- /.card-body -->
+        </div><!-- /.card -->
+    </div>
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title box-title">{{proyecto_pedido.nombre}}</h4>
+                <div class="content">
+                    <p>{{proyecto_pedido.descripcion}}</p>
+                </div>
+            </div>
+            <div class="card-footer">
+                <a class="btn btn-primary" href="{% url 'todoapp:editar_proyecto' proyecto_pedido.id %}">Editar Proyecto</a>
+                <a class="btn btn-danger" href="{% url 'todoapp:eliminar_proyecto' proyecto_pedido.id %}">Eliminar Proyecto</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /To Do and Live Chat -->
+{% endblock content %}

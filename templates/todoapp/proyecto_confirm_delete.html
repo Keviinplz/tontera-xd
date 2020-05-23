@@ -1,0 +1,11 @@
+{% extends 'todoapp/dashboard.html' %}
+{% block title %}
+Confirmación | Cleapp
+{% endblock title %}
+{% block content %}
+<form method="post">
+  {% csrf_token %}
+  <p><strong>¿Desea eliminar el Proyecto {{ object }}?</strong></p>
+  <button type="submit" class="btn btn-danger">Confirmar</button>
+</form>
+{% endblock content %}
