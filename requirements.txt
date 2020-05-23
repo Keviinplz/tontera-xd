@@ -4,7 +4,6 @@ asn1crypto==0.24.0
 async-timeout==3.0.1
 attrs==17.4.0
 Automat==0.6.0
-automata-lib==3.1.0.post1
 blinker==1.4
 certifi==2018.1.18
 chardet==3.0.4
@@ -28,7 +27,6 @@ keyrings.alt==3.0
 MarkupSafe==1.0
 multidict==4.7.5
 netifaces==0.10.4
-oauthlib==2.0.6
 PAM==0.4.2
 Pillow==7.1.1
 pyasn1==0.4.2
