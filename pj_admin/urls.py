@@ -18,12 +18,13 @@ from django.urls import path, include
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.generic import TemplateView
 
 from apps.user.views import Login, logoutUsuario
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(('apps.webpage.urls', 'web'))),
+    path('', TemplateView.as_view(template_name='index.html'), name='index'),
     path('cuenta/', include(('apps.user.urls', 'user'))),
     path('dashboard/', include(('apps.todoapp.urls', 'todoapp'))),
     path('accounts/login/',Login.as_view(), name = 'login'),
