@@ -36,7 +36,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.todoapp',
     'apps.user',
-    'apps.webpage',
 ]
 
 MIDDLEWARE = [

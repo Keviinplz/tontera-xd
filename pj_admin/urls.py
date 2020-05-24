@@ -29,8 +29,4 @@ urlpatterns = [
     path('dashboard/', include(('apps.todoapp.urls', 'todoapp'))),
     path('accounts/login/',Login.as_view(), name = 'login'),
     path('logout/',login_required(logoutUsuario), name = 'logout'),
-]
-
-urlpatterns += [
-    static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-]
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
